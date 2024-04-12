@@ -1,0 +1,61 @@
+Insertion Sort
+
+Good when list is almost sorted or you have a small dataset. You can get O(n) time.
+
+
+Searching
+
+-Storing data in a tree DS is more efficient than storing data in a linear DS like array, if we sort items as we insert them
+it gives us better performance than storing data in an unsorted list that we have search through one day.
+
+HashTables
+
+-HashTables are not ordered.
+
+BFS / DFS
+
+-DFS is like walking in a maze where you hit a dead end, turn back around & go to next point from where you can take either
+a left or a right turn.
+-DFS is less memory intensive as unlike BFS we don't have to store all child pointers of all nodes.
+-DFS / BFS are both O(n)
+-BFS is good for shortest path because we visit closest nodes 1st, but requires more memory. If you have more information about
+the target node like if you know that it is likely that the node is in the upper levels of the tree, then BFS is good option.
+-DFS is good if you have an idea that likely the node is deep down in the tree. Answers questions like does a path exist from
+root to target node? Uses less memory, not good at finding shortest paths, can get slow as compared to BFS.
+-DFS is O(h) where h is height of the tree
+
+//If you know a solution is not far
+from the root of the tree:
+
+BFS
+
+//If the tree is very deep and
+solutions are rare:
+
+BFS (DFS will take long)
+
+//If the tree is very wide:
+
+DFS (BFS will take more memory)
+
+//If solutions are frequent but
+located deep in the tree:
+
+DFS
+
+//Determining whether a path exists
+between two nodes:
+
+DFS
+
+//Finding the shortest path:
+
+BFS
+
+
+Dynamic Programming
+
+-Can be divided into subproblems?
+-Recursive Solution?
+-Are there repetitive subproblems?
+-Memoize subproblems
