@@ -25,6 +25,13 @@ const longestCommonSubstringTabulation = () => {
   for (let j = 0; j <= m; j++) dpArr2[0][j] = 0;
   for (let i = 0; i <= n; i++) dpArr2[i][0] = 0;
 
+  /**
+   * NOTE: In order to find the length of LCS, we have to keep a variable
+   * initialized to 0 & on each update to DP table we have to update that max (ans)
+   * by comparing to see if the current value of LCS length that we have computed is
+   * the max of all at the moment or not
+   */
+
   let ans = 0;
 
   for (let i = 1; i <= n; i++) {

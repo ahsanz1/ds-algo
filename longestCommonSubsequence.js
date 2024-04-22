@@ -7,7 +7,7 @@ const dpArr = new Array(str1.length)
 
 /**
  * f(ind1, ind2) -> tell me the LCS of s1 & s2 till ind1 & ind2
- * 
+ *
  * If chars are equal, this means that we have found a common subsequence of length 1, so we add 1, move both indexes &
  * we ask recursion to go & check if this subsequence has more to it (length can increase or not)
  *
@@ -15,7 +15,7 @@ const dpArr = new Array(str1.length)
  * index can find a matching char & contribute to LCS
  *
  * If any of the indexes goes below 0, this means that subsequence cannot be found any further so the length is 0!
- * 
+ *
  * TC -> 2^n x 2^m
  * Tabulation TC -> N x M
  * Tabulation SC -> N x M
@@ -30,6 +30,10 @@ const longestCommonSubsequence = (ind1, ind2) => {
     dpArr[ind1][ind2] = 1 + longestCommonSubsequence(ind1 - 1, ind2 - 1);
     return dpArr[ind1][ind2];
   }
+
+  /**
+   * NOTE: Either solve this guy or solve this guy, take whatever gives you the max answer
+   */
 
   dpArr[ind1][ind2] = Math.max(
     longestCommonSubsequence(ind1, ind2 - 1),
@@ -54,6 +58,10 @@ const longestCommonSubsequenceTabulation = () => {
 
   const n = str1.length;
   const m = str2.length;
+
+  /**
+   * NOTE: For all values of j, as long as i === 0, contribution to our LCS will be 0
+   */
 
   for (let j = 0; j <= m; j++) dpArr2[0][j] = 0;
   for (let i = 0; i <= n; i++) dpArr2[i][0] = 0;
@@ -86,9 +94,10 @@ const getLongestCommonSubsequence = (ind1, ind2) => {
   const mov1st = getLongestCommonSubsequence(ind1 - 1, ind2);
   const move2nd = getLongestCommonSubsequence(ind1, ind2 - 1);
 
-  dpArr3[ind1][ind2] = mov1st.length > move2nd ? mov1st : move2nd;
+  dpArr3[ind1][ind2] = mov1st.length > move2nd.length ? mov1st : move2nd;
   return dpArr3[ind1][ind2];
 };
+
 
 console.log(longestCommonSubsequence(2, 2));
 console.log(longestCommonSubsequenceTabulation());
