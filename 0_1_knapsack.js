@@ -37,9 +37,9 @@ const knapsack_0_1_tabulation = () => {
 
   for (let i = 1; i < weight.length; i++) {
     for (let w = 0; w < W; w++) {
-      const notTake = dpArr[(i - 1, w)];
+      const notTake = dpArr[i - 1][w];
       let take = -Infinity;
-      if (weight[i] <= w) take = value[i] + dpArr[(i - 1, w - weight[i])];
+      if (weight[i] <= w) take = value[i] + dpArr[i - 1][w - weight[i]];
 
       dpArr[i][w] = Math.max(notTake, take);
     }

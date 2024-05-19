@@ -4,6 +4,11 @@ const hashMap = {};
 
 const maxSumOfNonAdjacent = (index) => {
   if (index < 0) return 0;
+  /**
+   * If you have reached index === 0 that means you haven't picked up index 1 because if you had picked
+   * up index 1 then index - 2 would have happened & you would have reached index < 0. Now at index === 0
+   * you can pick!
+   */
   if (index === 0) return arr[0];
 
   if (hashMap[index]) return hashMap[index];

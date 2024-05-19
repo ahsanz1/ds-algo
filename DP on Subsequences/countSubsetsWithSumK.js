@@ -38,6 +38,7 @@ const countSubsequencesWithSumK = (index, target) => {
 
 const countSubsequencesWithSumKtabulation = (arr = [], target = 0) => {
   for (let i = 0; i < arr.length; i++) dpArr[i][0] = 1;
+  //On index 0, 1 will only be returned at arr[0] (arr[0] === target)
   if (arr[0] <= target) dpArr[0][arr[0]] = 1;
 
   for (let i = 1; i < arr.length; i++) {
