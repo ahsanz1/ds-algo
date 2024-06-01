@@ -3,7 +3,7 @@
  * achieve by buying & selling stock. You can buy & sell 2 times only BUT you must have
  * bought stock before you sell it. You cannot do buy buy & sell sell.
  *
- * Base Cae -> i === n -> you have exahusted the days, it doesn't matter whether buy=1 or buy=0
+ * Base Case -> i === n -> you have exahusted the days, it doesn't matter whether buy=1 or buy=0
  * you cannot make any profit now so return 0, cap === 0 -> you have exhausted the number of times
  * you can buy & sell
  *

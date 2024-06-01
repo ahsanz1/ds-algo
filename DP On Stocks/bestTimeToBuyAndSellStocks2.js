@@ -7,7 +7,7 @@
  * const prices = [7, 1, 5, 3, 6, 4];
  * If we buy on 0th day & sell on 2nd day -> 5 - 7 -> means when you buy you add -7 & when you sell you +5
  *
- * Base Cae -> i === n -> you have exahusted the days, it doesn't matter whether buy=1 or buy=0
+ * Base Case -> i === n -> you have exahusted the days, it doesn't matter whether buy=1 or buy=0
  * you cannot make any profit now so return 0
  *
  * TC -> 2^n, SC -> O(n) -> ASS
@@ -21,6 +21,7 @@ const bestTimeToBuyAndSellStocks2 = (i, buy) => {
   if (i === n) return 0;
 
   let profit = 0;
+  //Can i buy or not?
   if (buy) {
     const take = -prices[i] + bestTimeToBuyAndSellStocks2(i + 1, 0);
     const notTake = 0 + bestTimeToBuyAndSellStocks2(i + 1, 1);

@@ -12,8 +12,12 @@ const maxProfit = () => {
   let min = prices[0];
 
   for (let i = 0; i < prices.length; i++) {
-    const cost = prices[i] - min;
-    maxProfit = Math.max(maxProfit, cost);
+    const profit = prices[i] - min; //What's the profit if you sell on ith day.
+    maxProfit = Math.max(maxProfit, profit);
+    /**
+     * NOTE: Every time you sell, you must have bought on a day when price was minimum, that's why
+     * we keep updating the min
+     */
     min = Math.min(min, prices[i]);
   }
 

@@ -8,7 +8,7 @@
  * const prices = [7, 1, 5, 3, 6, 4];
  * If we buy on 0th day & sell on 2nd day -> 5 - 7 -> means when you buy you add -7 & when you sell you +5
  *
- * Base Cae -> i === n -> you have exahusted the days, it doesn't matter whether buy=1 or buy=0
+ * Base Case -> i === n -> you have exahusted the days, it doesn't matter whether buy=1 or buy=0
  * you cannot make any profit now so return 0
  *
  * TC -> 2^n, SC -> O(n) -> ASS
